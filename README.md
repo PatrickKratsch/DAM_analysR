@@ -47,4 +47,11 @@ Once the working directory in RStudio contains the contents of DAM_analysR, the 
 
    11. `sleep_bout_length` is calculated by subtracting every element in `sleep_start_list` from every corresponding element in `sleep_end_list`, plus 1. Hence, every list element in `sleep_bout_length` is a list itself and corresponds to one channel. This sub-list contains the length of every sleep bout exhibited by a specific fly throughout the course of the whole experiment. To get the corresponding start and end times of each sleep bout, `sleep_start_list` and `sleep_end_list` must be indexed by the same index as the bout is associated with in `sleep_bout_length`.
 
-## sleepstart_vs_boutlength_txt.R
+## sleepstart_vs_boutlength.R
+
+`sleepstart_vs_boutlength` takes the output of `analysR` as the first input argument.
+Since `sleepstart_vs_boutlength` outputs an Excel file, the name this file will have
+is the second input argument (set this name in quotes and add the .xlsx file extension).
+The third input argument is a vector of the channel numbers to be used; by default,
+this function analysis channel 1 to 32. The Excel file this function writes into the
+working directory contains the time point each sleep episode started, how long this episode lasted, and whether it happened during the day or during the night, for each channel, i.e. each fly, and each sleep episode within that channel.
