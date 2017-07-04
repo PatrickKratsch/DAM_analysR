@@ -49,7 +49,7 @@ Once the working directory in RStudio contains the contents of DAM_analysR, the 
 
 ## sleepstart_vs_boutlength.R
 
-`sleepstart_vs_boutlength` takes the output of `analysR` as the first input argument.
+`sleepstart_vs_boutlength` takes thhe output of `analysR` as the first input argument.
 Since `sleepstart_vs_boutlength` outputs an Excel file, the name this file will have
 is the second input argument (set this name in quotes and add the .xlsx file extension).
 The third input argument is a vector of the channel numbers to be used; by default,
