@@ -49,9 +49,10 @@ Once the working directory in RStudio contains the contents of DAM_analysR, the 
 
 ## sleepstart_vs_boutlength.R
 
-`sleepstart_vs_boutlength` takes thhe output of `analysR` as the first input argument.
+`sleepstart_vs_boutlength` takes the output of `analysR` as the first input argument.
 Since `sleepstart_vs_boutlength` outputs an Excel file, the name this file will have
 is the second input argument (set this name in quotes and add the .xlsx file extension).
-The third input argument is a vector of the channel numbers to be used; by default,
+The third input argument is a vector of the channel numbers to be used; By default,
 this function analyses channel 1 to 32. The Excel file this function writes into the
-working directory contains the time point each sleep episode started, how long this episode lasted, and whether it happened during the day or during the night, for each channel, i.e. each fly, and each sleep episode within that channel. For more details on how this is calculated, have a look at the annotation within `sleepstart_vs_boutlength.R`.
+working directory contains the time point each sleep episode started, how long this episode lasted, and whether it happened during the day or during the night, for each channel, i.e. each fly, and each sleep episode within that channel. More details on this function
+are within `sleepstart_vs_boutlength.R`.
