@@ -1,4 +1,4 @@
-# analyseR.R is a function to analyse data from the DAM system for sleep in Drosophila.
+# analyseR.R is a function to analyse data from the DAM system
 analysR <- function(DAM_raw, days_in_minutes = 1440, textual_file_name = NULL){
     
     # Source auxilliary functions (need to be in working directory)
@@ -18,13 +18,13 @@ analysR <- function(DAM_raw, days_in_minutes = 1440, textual_file_name = NULL){
         DAM_raw_clean <- DAM_raw[1:days_in_minutes, 10:42]
     }
     
-    # Bind an extra row of 1's to first position of DAM_raw_clean. This extra row
+    # Bind an extra row of 1's to first position of DAM_raw_clean; This extra row
     # is important for downstream analysis, but does not represent anything
-    # physiological = ghost row. 
+    # physiological (call it ghost row). 
     ghost_row <- rep.int(1, 33)
     DAM_raw_clean2 <- rbind(ghost_row, DAM_raw_clean)
     
-    # Extact first column from DAM_raw_clean2, which indicates light on/off into a 
+    # Extract first column from DAM_raw_clean2, which indicates light on/off into a 
     # separate vector (may be needed for reference later on). Then remove that column
     # from DAM_raw_clean2.
     light_regime <- DAM_raw_clean2[2:dim(DAM_raw_clean2)[1], 1]
@@ -38,7 +38,7 @@ analysR <- function(DAM_raw, days_in_minutes = 1440, textual_file_name = NULL){
     # object is an analogue-to-binary transformation, with 1 indicating no movement and 0
     # indicating movement.
     # NB: loop starts at i == 2 because the first column, the time indicator, must be kept constant.
-    # In analogue_to_binary, the 1's represent inactivity bouts, the 0's activity bouts
+    # In analogue_to_binary, the 1's represent inactivity bouts, the 0's activity bouts.
     analogue_to_binary <- DAM_raw_clean3
     cols <- ncol(analogue_to_binary)
     for(i in 2:cols){
@@ -52,7 +52,7 @@ analysR <- function(DAM_raw, days_in_minutes = 1440, textual_file_name = NULL){
         five_min_bouts[, i] <- sleep_define(five_min_bouts[, i])
     }
     
-    # Now we slide down every column of five_min_bouts to find sleep onset and sleep offset.
+    # Now slide down every column of five_min_bouts to find sleep onset and sleep offset.
     # The latter are stored in two separate lists.
     sleep_start_list <- list()
     sleep_end_list <- list()
