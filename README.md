@@ -1,6 +1,6 @@
 # DAM_analysR
 *Author: Patrick Kratschmer*
-## Introduction  
+## Introduction, aka Installing R and RStudio
 
 This repository contains work in progress on an R-based analysis package for the Drosophila Activity Monitor (DAM) system.
 
@@ -23,7 +23,7 @@ Once the working directory in RStudio contains the contents of DAM_analysR, the 
 
 ## analysR.R
 
-`analysR.R` is the base function used to work through the DAM FileScan output. Its first input is the DAM FileScan output, which is a text file (don't forget parentheses and file extension). Optionally, if the experiment was run for a different duration than 1440 min, the length of the experiment in minutes can be passed into analysR as the second argument. analysR's output is a list of 11 elements. Each element can be accessed by the `$` operator:
+`analysR.R` is the base function used to work through the DAM FileScan output. Its first input is the DAM FileScan output, which is a text file (don't forget quotation marks and file extension). Optionally, if the experiment was run for a different duration than 1440 min, the length of the experiment in minutes can be passed into analysR as the second argument. analysR's output is a list of 11 elements. Each element can be accessed with the `$` operator (you can also convert the data.frames into data.tables if that eases analysis, but here we use data.frames throughout as the datasets are not large enough to experience a difference in user time..). The third argument of analysR is set to NULL and can be ignored, unless you really want analysR's output list to be written as a textual file into the working directory (we have never used this feature so far..). The following explains the different elements computed by analysR:
 
    1. `light_regime` is a list of 1's and 0's, where 1 indicates light-on, and 0 light-off. Its length is specified by the `days_in_minutes` argument to `analysR`. Hence, each element of the `light_regime` vector indicates whether during a given minute of the experiment the light was switched on or off.
 
