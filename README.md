@@ -1,10 +1,10 @@
-# DAM analysR
+# DAM_analysR
 *Author: Patrick Kratschmer*
 ## Introduction  
 
 This repository contains work in progress on an R-based analysis package for the Drosophila Activity Monitor (DAM) system.
 
-In order to run it, R needs to be installed on the local computer, and preferably RStudio as an IDE. This is a quick guide to do so:
+In order to run it, R needs to be installed on the local computer, and preferably RStudio as an IDE:
 
 1. Download R
   * R can be downloaded from CRAN: https://cran.r-project.org/ Simply follow the instructions (and note that XQuartz is needed for Mac users).
@@ -12,14 +12,14 @@ In order to run it, R needs to be installed on the local computer, and preferabl
 2. Download RStudio
   * RStudio can be downloaded from: https://www.rstudio.com/
 
-Once R and RStudio are installed on the local computer, there are two (so far) extra packages that need to be installed before using DAM_analysR. These are:
+Once R and RStudio are installed on the local computer, there are two (so far) extra packages that need to be installed before using DAM_analysR:
 
 * xlsx
 * plyr
 
-To install these packages, and any other, type ````install.packages("<packagename>")```` into the console in RStudio. Once this is done, start a new R project in RStudio, which sets the working directory to be the new RProject directory. Now the DAM_analysR GitHub repository can be downloaded and all its contents be copied into that RProject directory on the local computer; otherwise, for those using git and GitHub, the remote repo (DAM_analysR) can be forked and set as the working directory in RStudio.
+To install these packages, and any other, type ````install.packages("<packagename>")```` into the console in RStudio. Once this is done, start a new R project in RStudio, which sets the working directory to be the new RProject directory. Now the DAM_analysR GitHub repository can be downloaded and all its contents be copied into that RProject directory on the local computer; Alternatively, the remote repo (DAM_analysR) can be forked and set as the working directory in RStudio.
 
-Once the working directory in RStudio contains the contents of DAM_analysR, the analysis of DAM raw output data can begin. First, run the raw data from the DAM through DAM FileScan; the output files from this need to be copied into the RStudio working directory. Second, source analysR.R by ````source("analysR.R")````. Third, run analysR with the name of the raw DAM output file as the first argument, and the length of the experiment in minutes as the second argument (the default experiment duration is 1440 min, i.e. one day). Store the output of analysR in a variable. Below, I go into detail of what the analysR output contains, and how the respective elements are calculated.
+Once the working directory in RStudio contains the contents of DAM_analysR, the analysis of DAM raw output data can begin. First, run the raw data from the DAM through DAM FileScan; The output files from this need to be copied into the RStudio working directory. Second, source analysR.R by ````source("analysR.R")````. Third, run analysR with the name of the raw DAM FileScan output file as the first argument, and the length of the experiment in minutes as the second argument (the default experiment duration is 1440 min, i.e. one day). Store the output of analysR in a variable. Below, I go into detail of what the analysR output contains, and how the respective elements are calculated.
 
 ## analysR.R
 

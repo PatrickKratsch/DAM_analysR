@@ -10,8 +10,13 @@ analysR <- function(DAM_raw, days_in_minutes = 1440, textual_file_name = NULL){
     # Read in raw data input
     DAM_raw <- read.table(DAM_raw)
     
-    # Extract columns 12:44 for downstream analysis
-    DAM_raw_clean <- DAM_raw[1:days_in_minutes, 12:44]
+    # Extract columns 12:44 or 10:42 (based on date parsing) for downstream analysis
+    if(dim(DAM_raw)[2] == 44){
+        DAM_raw_clean <- DAM_raw[1:days_in_minutes, 12:44]
+    }
+    else if(dim(DAM_raw)[2] == 42){
+        DAM_raw_clean <- DAM_raw[1:days_in_minutes, 10:42]
+    }
     
     # Bind an extra row of 1's to first position of DAM_raw_clean. This extra row
     # is important for downstream analysis, but does not represent anything
