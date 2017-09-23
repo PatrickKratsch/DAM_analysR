@@ -16,6 +16,7 @@ Once R and RStudio are installed on the local computer, there are two (so far) e
 
 * xlsx
 * plyr
+* dplyr
 
 To install these packages, and any other, type ````install.packages("<packagename>")```` into the console in RStudio. Once this is done, start a new R project in RStudio, which sets the working directory to be the new RProject directory. Now the DAM_analysR GitHub repository can be downloaded and all its contents be copied into that RProject directory on the local computer; Alternatively, the remote repo (DAM_analysR) can be forked and set as the working directory in RStudio.
 
