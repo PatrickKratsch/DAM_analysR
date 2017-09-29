@@ -1,8 +1,4 @@
-<<<<<<< HEAD:DAM_sleepstart_vs_boutlength.R
 DAM_slst_vs_bl <- function(analysR_output, xlsx_file_name, channels = 1:32){
-=======
-sleepstart_vs_boutlength <- function(analysR_output, xlsx_file_name, channels = 1:32){
->>>>>>> a77f5b07442fd70b2f2bb1e8ba51e40660cb37e3:sleepstart_vs_boutlength.R
     
     # NB: the xlsx package is built in JAVA, 
     # so you need JAVA installed to run this script.
