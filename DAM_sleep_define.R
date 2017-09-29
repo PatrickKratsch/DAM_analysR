@@ -1,4 +1,4 @@
-sleep_define <- function(vec){
+DAM_sleep_define <- function(vec){
     
     len <- length(vec)
     adjusted_len <- len - 4

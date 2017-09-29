@@ -1,4 +1,4 @@
-light_dark_transitions <- function(light_regime, days_in_minutes){
+DAM_light_dark_transitions <- function(light_regime, days_in_minutes){
     
     dl_transitions <- vector()
     ld_transitions <- vector()

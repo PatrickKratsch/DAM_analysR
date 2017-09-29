@@ -11,7 +11,7 @@
 # sliding window, i.e. the `0`, we actually have to store the 
 # index of the `1`, which is synonymous with the index
 # of the `0` minus `1`. (see sleep_start.R for more information)
-sleep_end <- function(vec){
+DAM_sleep_end <- function(vec){
     
     adjusted_length <- length(vec) - 1
     sleep_end_vec <- vector(mode = "numeric")

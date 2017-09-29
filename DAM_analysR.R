@@ -1,13 +1,13 @@
-# analysR is a function to analyse data from the DAM system
-analysR <- function(DAM_raw, days_in_minutes = 1440){
+# DAM_analysR is a function to analyse data from the DAM system
+DAM_analysR <- function(DAM_raw, days_in_minutes = 1440){
     
     library(dplyr)
       
     # Source auxilliary functions (need to be in working directory)
-    source("sleep_define.R")
-    source("sleep_start.R")
-    source("sleep_end.R")
-    source("light_dark_transitions.R")
+    source(“DAM_sleep_define.R")
+    source(“DAM_sleep_start.R")
+    source(“DAM_sleep_end.R")
+    source(“DAM_light_dark_transitions.R")
     
     # Read in raw data input
     DAM_raw <- read.table(DAM_raw)
@@ -57,7 +57,7 @@ analysR <- function(DAM_raw, days_in_minutes = 1440){
     five_min_bouts <- analogue_to_binary
     for(i in 2:cols){
       
-        five_min_bouts[, i] <- sleep_define(five_min_bouts[, i])
+        five_min_bouts[, i] <- DAM_sleep_define(five_min_bouts[, i])
     }
     
     # Now slide down every column of five_min_bouts to 
@@ -68,10 +68,10 @@ analysR <- function(DAM_raw, days_in_minutes = 1440){
     for(i in 2:cols){
       
         start_index <- length(sleep_start_list) + 1
-        sleep_start_list[[start_index]] <- sleep_start(five_min_bouts[, i])
+        sleep_start_list[[start_index]] <- DAM_sleep_start(five_min_bouts[, i])
         
         end_index <- length(sleep_end_list) + 1
-        sleep_end_list[[end_index]] <- sleep_end(five_min_bouts[, i])
+        sleep_end_list[[end_index]] <- DAM_sleep_end(five_min_bouts[, i])
     }
     
     # Subtract corresponding columns of sleep_end_list 
@@ -87,7 +87,7 @@ analysR <- function(DAM_raw, days_in_minutes = 1440){
     }
     
     # Calculate all transitions from light to dark and dark to light
-    transitions <- light_dark_transitions(light_regime, days_in_minutes)
+    transitions <- DAM_light_dark_transitions(light_regime, days_in_minutes)
     
     output <- list(light_regime = light_regime, transitions = transitions, 
                    DAM_raw = DAM_raw, DAM_raw_clean = DAM_raw_clean, 

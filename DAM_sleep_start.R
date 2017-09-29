@@ -21,7 +21,7 @@
 # that the physiological entity we are storing in 
 # sleep_start_vec is the `1`, i.e. the minute during which the
 # fly started to sleep.
-sleep_start <- function(vec){
+DAM_sleep_start <- function(vec){
     
     adjusted_length <- length(vec) - 1
     sleep_start_vec <- vector(mode = "numeric")
