@@ -1,5 +1,5 @@
 # DAM_analysR
-*Author: Patrick Kratschmer*
+*Author: Patrick Krätschmer*
 ## Introduction
 
 This repository contains work in progress on an R-based analysis package for the Drosophila Activity Monitor (DAM) system.
