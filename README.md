@@ -57,4 +57,4 @@ is the second input argument (set this name in quotes and add the .xlsx file ext
 The third input argument is a vector of the channel numbers to be used; by default,
 this function analyses channel 1 to 32. The Excel file this function writes into the
 working directory contains the time point each sleep episode started, how long this episode lasted, and whether it happened during the day or during the night, for each channel, i.e. each fly, and each sleep episode within that channel. More details on this function
-are within `sleepstart_vs_boutlength.R`.
+are within `DAM_slst_vs_bl.R`.
