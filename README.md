@@ -1,4 +1,4 @@
-# DAM_sleep_parameters
+# DAM_analysR
 *Author: Patrick Krätschmer*
 ## Introduction
 
