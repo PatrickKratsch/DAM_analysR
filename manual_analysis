@@ -31,13 +31,12 @@ M103exp_311018 <- M103exp_311018[, 13:44]
 a_311018 <- M103exp_311018[, 1:16]
 b_311018 <- M103exp_311018[, 17:32]
 
-
 # Sum up all beam crosses
 a_311018 <- colSums(a_311018) 
 b_311018 <- colSums(b_311018)
 
 # Remove dead flies
-M103exp_testDead_311018 <- M103_311018[start_311018:end_311018, ]
+M103exp_testDead_311018 <- M103_311018[start_testDead_311018:end_testDead_311018, ]
 
 # Get fly movement data only
 M103exp_testDead_311018 <- M103exp_testDead_311018[, 13:44]
