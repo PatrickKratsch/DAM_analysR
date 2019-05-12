@@ -47,7 +47,7 @@ b_311018 <- M103exp_testDead_311018[, 17:32]
 
 # Sum up all beam crosses
 a_testDead_311018 <- colSums(a_testDead_311018) 
-b_testDead_311018 <- colSums(b_311018)
+b_testDead_311018 <- colSums(b_testDead_311018)
 
 # Remove dead flies
 a_311018[which(a_testDead_311018 == 0)] <- NA
